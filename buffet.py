@@ -56,7 +56,7 @@ if age < 1:
     print("0.00")
 
 elif age <= 12:
-    print(f"{age * child_price}")
+    print(f"{(age * child_price):.2f}")
 
 elif age <= 65:
     print("$16.95")
