@@ -17,53 +17,56 @@ Additional Tickets? (Y/N)
 """
 
 fname = ""
-
-while True:
-    fname = input("Please tell us your First name:  ").upper()
-    fname = fname.strip()
-    if not fname:
-        print("First name cannot be blank. Please try again.")
-    elif not fname.isalpha():
-        print("please enter letters only. No numbers or symbols.")
-    else:
-        break
-
-lname = ""
-
-while not lname:
-    lname = input("Please tell us your Last name and Last name:  ").upper()
-    lname = lname.strip()
-
-
-age = ""
-
-while True:
-    try:
-        age = int(input("Please tell us your age:  "))
-        if age >= 0:
+try:
+    while True:
+        fname = input("Please tell us your First name:  ").upper()
+        fname = fname.strip()
+        if not fname:
+            print("First name cannot be blank. Please try again.")
+        elif not fname.isalpha():
+            print("please enter letters only. No numbers or symbols.")
+        else:
             break
-        print("Age must be a positive number.")
-    except ValueError:
-        print("invalid enrty, please enter a positive number")
-phnumber = ""
 
-while not phnumber:
-    phnumber = input("Please tell us your Phone Number:  ")
-    phnumber = phnumber.strip()
+    lname = ""
 
-tickets = -1
+    while not lname:
+        lname = input("Please tell us your Last name and Last name:  ").upper()
+        lname = lname.strip()
 
-while True:
-    try:
-        tickets = int(input("Please tell us how many tickets you need.  "))
-        if tickets >= 0:
-            break
-        print("Age must be a positive number.")
-    except ValueError:
-        print("invalid enrty, please enter a positive number")
+    age = ""
 
-more = ""
-while more != "Y" and more != "N":
-    more = input(
-        "Will you be needing more tickets please type Y or N to quit:  "
-    ).upper()
+    while True:
+        try:
+            age = int(input("Please tell us your age:  "))
+            if age >= 0:
+                break
+            print("Age must be a positive number.")
+        except ValueError:
+            print("invalid enrty, please enter a positive number")
+    phnumber = ""
+
+    while not phnumber:
+        phnumber = input("Please tell us your Phone Number:  ")
+        phnumber = phnumber.strip()
+
+    tickets = -1
+
+    while True:
+        try:
+            tickets = int(input("Please tell us how many tickets you need.  "))
+            if tickets >= 0:
+                break
+            print("Ticket amount must be a positive number.")
+        except ValueError:
+            print("invalid enrty, please enter a positive number")
+
+    more = ""
+    while more != "Y" and more != "N":
+        more = input(
+            "Will you be needing more tickets please type Y or N to quit:  "
+        ).upper()
+except ValueError:
+    print("data entry error")
+except Exception as e:
+    print(e)
