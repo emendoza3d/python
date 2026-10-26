@@ -1,0 +1,12 @@
+-----Bug Errors-----/n-----Bug Errors-----/n2026-10-26 11:49:55.158925/nFile: test/nError Discriptionsmall/nPrioritylow/n-----Bug Errors-----/n2026-10-26 11:50:51.758111
+File: hello
+Error Discriptiontest
+Prioritymedium
+-----Bug Errors-----/n2026-10-26 11:51:45.287663
+File: test 2
+Error Discription: great
+Priority: low
+2026-10-26 11:51:45.287663
+File: test 3
+Error Discription: low
+Priority: high
