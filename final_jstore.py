@@ -3,45 +3,81 @@
     #ring options, Global constants
 SHAPE = ("round", "cushion", "marquise", "oval")
 STYLE = ("solitaire", "halo", "vintage", "3 stone")
-METAL = ("yellowg", "whiteg", "roseg", "platinum")
+METAL = ("gold", "white gold", "rose gold", "platinum")
 DIAMOND = ("natural", "lab")
 MENU = "menu.txt"
 
 def login():
     # Gets login info
     # returns customer ID
-    if
-        print("Already a customer? Please log in.")
-        id = (input("Please enter your email:  "))
-    else:
-        print("First time with us? Let us get to know you")
-        email = input("Email:  ").strip().lower()
-        phone = input("Phone number:  ").strip()
+    
+    print("Already a customer? Please log in.")
+    id = (input("Please enter your email:  "))
+    
+    print("First time with us? Let us get to know you")
+    email = input("Email:  ").strip().lower()
+    phone = input("Phone number:  ").strip()
+    name = input("Full Name:   ").strip().lower()
 
+    with open ("customer.txt", "a") as f:
+        f.write(f"{id}, {email}, {phone}")
+
+    return id
         
 
 
         # Have customer text with ID and names, check if on it. If on it display name, office, extension otherwise get them.
-    pass
+   
 
 def past_orders(Customer):
     # check for and display most recent 5 orders if there are any, ask if they want to reorder, give them menu
     # return number of past order or 6 if they want to create a new order
-    pass
+   print("Tell us about your dream piece.")
 
-def new_order(customer):
+pass
+
+def new_ring():
     # display choices, collect information, save and pass back a LIST named order
-    pass
+    # start here 1
+    for Shape in SHAPE:
+        print (f"  {Shape}")
+        my_shape = input("Please enter Shape you want.  ")
+
+    for Style in STYLE:
+        print (f"  {Style}")
+    my_style = (input("Please enter the the Style your looking for.  "))
+     
+    for Metal in METAL:
+        print (f"  {Metal}")
+    my_metal = (input("Please enter the the type of Metal you would like.  "))
+      
+    for Diamond in DIAMOND:
+        print (f"  {Style}")
+    my_diamond = (input("Please enter the the Diamond your looking for.  "))
 
 
-def verify(order):
+
+def verify(Shape = "round", Style = "halo", Metal = "yellow gold",Diamond = "natural"):
+    print(my_shape)
+    print(my_style)
+    print(my_metal)
+    print(my_diamond)
+
+def main():
+    my_shape, my_style, my_metal, my_diamond = new_ring()
+    verify(my_shape, my_style, my_metal, my_diamond)
     # verify order by displaying on screen and asking confirm, correct, cancel
-    pass
+    
 
 
 def save_order(order):
     # save to txt file
-    pass
+    with open ("ring_order.txt", "b") as f:
+        f.write(f"{my_shape}, {my_style}, {my_metal}, {my_diamond}")
+
+    
+
+   
 
 
 def change_order(order):
@@ -66,6 +102,7 @@ def main():
     save_order(order)
     change_order(order)
     display_order(order)
+    pass
 
 
 main()
