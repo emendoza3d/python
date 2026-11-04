@@ -1,0 +1,4 @@
+SHAPE : round, cushion, marquise, oval
+STYLE : solitaire, halo, vintage, 3 stone
+METAL : gold, white gold, rose gold, platinum
+DIAMOND : natural, lab
