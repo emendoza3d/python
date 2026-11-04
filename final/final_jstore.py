@@ -32,7 +32,7 @@ def past_orders(Customer):
 
 def new_order(id):
     menu_items = readmenu.read_menu()
-    readmenu.split_into_variables(menu_items)
+    readmenu.split_into_variables(menu)
     print(menu_items)
     shape, style, metal, diamond = readmenu.split_into_variables(menu_items)
 

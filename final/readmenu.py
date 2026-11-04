@@ -2,13 +2,13 @@
 def read_menu():
     menus = {}
     try:
-        with open("menu.txt", 'r') as file:
+        with open("final\\menu.txt", 'r') as file:
             for line in file:
                 parts_of_line = line.strip().split(':')
                 category = parts_of_line[0].strip()
                 detail = parts_of_line[1].strip()
                 menus[category] = detail
-                print(f"contents of menu{menus}")
+        print(f"contents of menu{menus}")
         return menus
     except FileNotFoundError:
         print("Please make sure menu.txt exists.")
