@@ -1,21 +1,19 @@
-
+#being called for main program
 def read_menu():
     menus = {}
     try:
         with open("menu.txt", 'r') as file:
             for line in file:
-                line = line.strip()
-                if not line:
-                    continue
-                category, detail = line.split(':', 1)
-                menus[category.strip().upper()] = detail.strip()
+                parts_of_line = line.strip().split(':')
+                category = parts_of_line[0].strip()
+                detail = parts_of_line[1].strip()
+                menus[category] = detail
+                print(menus)
         return menus
     except FileNotFoundError:
         print("Please make sure menu.txt exists.")
-        return menus
-    except ValueError:
-        print("Each menu line must contain a category and value separated by ':'.")
-        return menus
+    except IndexError:
+        return menus # this handles blank lines in the text file
     except Exception as e:
         print(e)
 
@@ -24,39 +22,44 @@ def split_into_variables(menu_items):
     style = menu_items.get("STYLE")
     metal = menu_items.get("METAL")
     diamond = menu_items.get("DIAMOND")
-    print(shape)
     return shape, style, metal, diamond
 
-def print_menu(shape, style, metal, diamond):
-    """ This section deliberately incomplete """
+# def print_menu(shape, style, metal, diamond):
+def print_shape(shape):
     print("Shape\n")
     print(shape)
+    count = 1
     shape_item = shape.split(',')
     for item in shape_item:
-        print(f"\t{item.strip()}")
+        print(f"{count}.    {item.strip()}")
+        count += 1
 
+def print_style(style):
     print("Style\n")
+    print(style)
+    count = 1
     shape_item = style.split(',')
     for item in shape_item:
-        print(f"\t{item.strip()}")
+        print(f"{count}.    {item.strip()}")
+        count += 1
 
+def print_metal(metal):
     print("Metal\n")
+    print(metal)
+    count = 1
     shape_item = metal.split(',')
     for item in shape_item:
-        print(f"\t{item.strip()}")
+        print(f"{count}.    {item.strip()}")
+        count += 1
 
-
+def print_diamond(diamond):
     print("Diamond\n")
+    print(diamond)
+    count = 1
     shape_item = diamond.split(',')
     for item in shape_item:
-        print(f"\t{item.strip()}")
+        print(f"{count}.    {item.strip()}")
+        count += 1
 
 
 
-def main():
-    menu_items = read_menu()
-    shape, style, metal, diamond = split_into_variables(menu_items)
-    print_menu(shape, style, metal, diamond)
-
-if __name__ == "__main__":
-    main()

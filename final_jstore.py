@@ -1,5 +1,5 @@
 
-
+import readmenue
     #ring options, Global constants
 SHAPE = ("round", "cushion", "marquise", "oval")
 STYLE = ("solitaire", "halo", "vintage", "3 stone")
@@ -36,7 +36,10 @@ def past_orders(Customer):
 
 pass
 
-def new_ring():
+def new_order():
+    menu_items = readmenue.read_menu()
+    shape, style, metal, diamond = readmenue.split_into_variables(menu_items)
+
     # display choices, collect information, save and pass back a LIST named order
     # start here 1
     for Shape in SHAPE:
