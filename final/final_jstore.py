@@ -1,10 +1,5 @@
 
-import readmenue
-    #ring options, Global constants
-SHAPE = ("round", "cushion", "marquise", "oval")
-STYLE = ("solitaire", "halo", "vintage", "3 stone")
-METAL = ("gold", "white gold", "rose gold", "platinum")
-DIAMOND = ("natural", "lab")
+import readmenu
 MENU = "menu.txt"
 
 def login():
@@ -34,11 +29,12 @@ def past_orders(Customer):
     # return number of past order or 6 if they want to create a new order
    print("Tell us about your dream piece.")
 
-pass
 
-def new_order():
-    menu_items = readmenue.read_menu()
-    shape, style, metal, diamond = readmenue.split_into_variables(menu_items)
+def new_order(id):
+    menu_items = readmenu.read_menu()
+    readmenu.split_into_variables(menu_items)
+    print(menu_items)
+    shape, style, metal, diamond = readmenu.split_into_variables(menu_items)
 
     # display choices, collect information, save and pass back a LIST named order
     # start here 1
@@ -105,7 +101,6 @@ def main():
     save_order(order)
     change_order(order)
     display_order(order)
-    pass
 
 
 main()

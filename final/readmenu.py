@@ -8,7 +8,7 @@ def read_menu():
                 category = parts_of_line[0].strip()
                 detail = parts_of_line[1].strip()
                 menus[category] = detail
-                print(menus)
+                print(f"contents of menu{menus}")
         return menus
     except FileNotFoundError:
         print("Please make sure menu.txt exists.")
@@ -18,6 +18,7 @@ def read_menu():
         print(e)
 
 def split_into_variables(menu_items):
+    print(menu_items)
     shape = menu_items.get("SHAPE")
     style = menu_items.get("STYLE")
     metal = menu_items.get("METAL")
