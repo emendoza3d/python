@@ -32,27 +32,27 @@ def past_orders(Customer):
 
 def new_order(id):
     menu_items = readmenu.read_menu()
-    readmenu.split_into_variables(menu)
     print(menu_items)
-    shape, style, metal, diamond = readmenu.split_into_variables(menu_items)
+    Shape, Style, Metal, Diamond = readmenu.split_into_variables(menu_items)
 
     # display choices, collect information, save and pass back a LIST named order
     # start here 1
-    for Shape in SHAPE:
-        print (f"  {Shape}")
-        my_shape = input("Please enter Shape you want.  ")
+    for shape_option in Shape.split(","):
+        print(f"  {shape_option.strip()}")
+    my_shape = input("Please enter the shape you want: ").strip()
 
-    for Style in STYLE:
-        print (f"  {Style}")
-    my_style = (input("Please enter the the Style your looking for.  "))
-     
-    for Metal in METAL:
-        print (f"  {Metal}")
-    my_metal = (input("Please enter the the type of Metal you would like.  "))
-      
-    for Diamond in DIAMOND:
-        print (f"  {Style}")
-    my_diamond = (input("Please enter the the Diamond your looking for.  "))
+    for style_option in Style.split(","):
+        print(f"  {style_option.strip()}")
+    my_style = input("Please enter the style you're looking for: ").strip()
+
+    for metal_option in Metal.split(","):
+        print(f"  {metal_option.strip()}")
+    my_metal = input("Please enter the type of metal you would like: ").strip()
+
+    for diamond_option in Diamond.split(","):
+        print(f"  {diamond_option.strip()}")
+    my_diamond = input("Please enter the diamond you're looking for: ").strip()
+    return my_shape, my_style, my_metal, my_diamond
 
 
 
