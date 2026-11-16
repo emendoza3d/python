@@ -32,7 +32,6 @@ def past_orders(Customer):
 
 def new_order(id):
     menu_items = readmenu.read_menu()
-    print(menu_items)
     Shape, Style, Metal, Diamond = readmenu.split_into_variables(menu_items)
 
     # display choices, collect information, save and pass back a LIST named order
@@ -56,28 +55,18 @@ def new_order(id):
 
 
 
-def verify(Shape = "round", Style = "halo", Metal = "yellow gold",Diamond = "natural"):
-    print(my_shape)
-    print(my_style)
-    print(my_metal)
-    print(my_diamond)
+def verify(shape = "round", style = "halo", metal = "yellow gold",diamond = "natural"):
+    print(shape)
+    print(style)
+    print(metal)
+    print(diamond)
 
-def main():
-    my_shape, my_style, my_metal, my_diamond = new_ring()
-    verify(my_shape, my_style, my_metal, my_diamond)
-    # verify order by displaying on screen and asking confirm, correct, cancel
-    
-
-
-def save_order(order):
-    # save to txt file
-    with open ("ring_order.txt", "b") as f:
-        f.write(f"{my_shape}, {my_style}, {my_metal}, {my_diamond}")
-
-    
-
-   
-
+def save_to_file(order):
+    with open("new_order.txt", "a") as file:
+        file.write(
+            f"Shape: {order[0]}, Style: {order[1]}, "
+            f"Metal: {order[2]}, Diamond: {order[3]}\n"
+        )
 
 def change_order(order):
     # display numbered parts of order allow them to change
@@ -96,9 +85,8 @@ def main():
     saved = past_orders(id)
     # if saved order chosen  skip new order
     order = new_order(id)
-    approved = verify(order)
-    # if approved save - otherwise change
-    save_order(order)
+    verify(*order)
+    save_to_file(order)
     change_order(order)
     display_order(order)
 
