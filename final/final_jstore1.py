@@ -56,13 +56,14 @@ def new_order(id):
 
 
 def verify(shape = "round", style = "halo", metal = "yellow gold",diamond = "natural"):
+    print("Your Dream Ring")
     print(shape)
     print(style)
     print(metal)
     print(diamond)
 
 def save_to_file(order):
-    with open("new_order.txt", "a") as file:
+    with open("final\\new_order.txt", "a") as file:
         file.write(
             f"Shape: {order[0]}, Style: {order[1]}, "
             f"Metal: {order[2]}, Diamond: {order[3]}\n"

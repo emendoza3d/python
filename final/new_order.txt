@@ -1,1 +1,2 @@
 Shape: round, Style: halo, Metal: gold, Diamond: lab
+Shape: oval, Style: halo, Metal: gold, Diamond: lab
